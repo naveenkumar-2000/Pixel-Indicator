@@ -1,0 +1,27 @@
+
+<!-- /////-----Pixel Indicator-----\\\\\ -->
+<style>
+    *{
+        margin: 0px;
+    }
+</style>
+<!-- பிக்சல் அளவைக் காட்டும் பிக்ஸட் பாக்ஸ் -->
+    <div style="width:100%; text-align: center; position: fixed; top: 0px;  background: rgb(222, 255, 188); color: black; padding: 5px; font-family: sans-serif; font-weight: bold; z-index: 9999;">
+        Width: <span id="page-width">0px</span>
+    </div>
+
+<script>
+    // பிக்சல் அளவைக் காட்டும் span டேக்
+    const pageWidthSpan = document.getElementById('page-width');
+
+    // அகலத்தைக் கணக்கிட்டு அப்டேட் செய்யும் ஃபங்க்ஷன்
+    function updateWidth() {
+        let currentWidth = window.innerWidth; // தற்போதைய அகலம் (Pixel)
+        pageWidthSpan.textContent = currentWidth + 'px';
+    }
+
+    // பக்கம் லோட் ஆகும்போதும், ரீசைஸ் ஆகும்போதும் வேலை செய்ய
+    window.addEventListener('resize', updateWidth);
+    window.addEventListener('DOMContentLoaded', updateWidth);
+</script>
+<!-- /////-----Pixel Indicator-----\\\\\ -->
